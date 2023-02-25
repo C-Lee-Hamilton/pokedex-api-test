@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { pokeApi } from "../utils/consts";
-import circle from '../components/bluecircle.png';
-import logo from '../components/pokeball.ico';
+import circle from '../assets/bluecircle.png';
+import logo from '../assets/pokeball.ico';
 
 const data = [
   {
