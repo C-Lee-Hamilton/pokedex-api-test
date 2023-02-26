@@ -71,8 +71,6 @@ export const PokemonPage = () => {
 
   return(
     <div>
-<h1>Pokedex Page</h1>
-
       {name}
       <p>Type: {poketype1}{poketype2} </p>
       {/* {pokemon?.types?.map((type, index) => (<div key={index}>{type.type.name}</div>))} */}

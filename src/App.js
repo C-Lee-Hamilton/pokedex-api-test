@@ -4,6 +4,7 @@ import './App.css';
 
 import { ErrorPage } from './pages/ErrorPage';
 import { PokemonPage } from './pages/PokemonPage';
+import { PokeDex } from './components/PokeDex';
 
 // const router = createBrowserRouter([
 //   {
@@ -21,12 +22,14 @@ function App() {
   return (
   
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home/>} errorElement={<ErrorPage/>} />
-          <Route path="pokemon/:pokemonId" element={<PokemonPage />} />
-        </Routes>
-      </BrowserRouter>
+      <PokeDex>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home/>} errorElement={<ErrorPage/>} />
+            <Route path="pokemon/:pokemonId" element={<PokemonPage />} />
+          </Routes>
+        </BrowserRouter>
+      </PokeDex>
     </div>
    
   );

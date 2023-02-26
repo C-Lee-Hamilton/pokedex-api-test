@@ -108,27 +108,18 @@ body{
 
 
 /* EVERYTHING BELOW HERE IS FOR THE SWITCH*/
-   .switch {
-    
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    border-style: outset ;
-    border-radius:34px;
-    border-width:2px;
-    
-  }
-  .switch2 {
-    
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    border-style: outset ;
-    border-radius:34px;
-    border-width:2px;
-    border-color:rgb(49, 154, 224);
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  border-style: outset ;
+  border-radius:34px;
+  border-width:2px;
+}
+  
+.switchOn {
+  border-color:rgb(49, 154, 224);
 }
   /* Hide default HTML checkbox */
   .switch input {
