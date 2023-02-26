@@ -19,6 +19,7 @@ import { PokemonPage } from './pages/PokemonPage';
 
 function App() {
   return (
+  
     <div className="App">
       <BrowserRouter>
         <Routes>
@@ -27,6 +28,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+   
   );
 }
 

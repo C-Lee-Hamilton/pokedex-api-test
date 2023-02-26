@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { pokeApi } from "../utils/consts"
+import { pokeApi } from "../utils/consts";
+import circle from '../components/bluecircle.png';
+import logo from '../components/pokeball.ico';
 
 const data = [
   {
@@ -108,18 +110,15 @@ const data = [
 
 export const List = () => {
   const [pokemon, setPokemon] = useState([]);
-  const [Pic,setPic]=useState();
-  // let j=Math.floor(Math.random() * 21);
-  // let newRandomPoke=data[j].name;
-  // let randomPic=data[j].sprite;
+  const [Pic,setPic]=useState(logo);
+  const [toggle,setToggle]=useState(false);
+  const [power,setPower]=useState("camera2");
+  const [power2,setPower2]=useState("camera2");
+  const [screen,setScreen]=useState("screen");
+  const [light,setLight]=useState("switch");
+  const [vis,setVis]=useState(true);
 
-  // const newPoke=()=>{
-  //   setPic(randomPic);
-  //   setPokemon({...data[j], id: j});
-  //   console.log(j);
-  //   console.log(newRandomPoke);
-  // };
-  
+ 
 
     useEffect(() => {
     const fetchPoke = async () => {
@@ -129,39 +128,64 @@ export const List = () => {
       //     console.log(data.results);
       //     setPokemon(data.results);
       //   })
-      //THIS WILL LET YOU GET A RANDOM POKEDEX DESCRIPTION ENTRY
-      // let b=Math.floor(Math.random() * 21);
-      // let url = "https://pokeapi.co/api/v2/pokemon/" + b.toString();
-      // let res = await fetch(url);
-      // let pokemin = await res.json();
-      // res = await fetch(pokemin["species"]["url"]);
-      // let pokeminDesc = await res.json();
-      // pokeminDesc = pokeminDesc["flavor_text_entries"][b]["flavor_text"];
-      // setPokemon(pokeminDesc);
-  
-  //  newPoke();
-
+   
       setPokemon(data);
       console.log(pokemon);
     };
     fetchPoke();
   }, [])
-
+ const showe=()=>{toggle===true ? setToggle(false):setToggle(true);
+                 power==="camera2" ? setPower("camera3"):setPower("camera2");
+                 power2==="camera2" ? setPower2("camera4"):setPower2("camera2");
+                 screen==="screen" ? setScreen("screenon"):setScreen("screen");
+                 light==="switch" ? setLight("switch2"):setLight("switch");
+                 vis===true ? setVis(false):setVis(true);
+                }
 
   return (
     <Container>
      
-      <ListBox>
-        
+      <ListBox><div className="attempter">
+      <img className="camera" src={circle}/>
+      <img className={power} src={circle}/>
+      <img className={power2} src={circle}/>
+      <img className="camera2" src={circle}/>
+      </div>
         <ListHeader>
-          Random POKéMANs
+       
+       
         </ListHeader>
-        { pokemon.length && pokemon.map((pokeman, index) => (
-            <Pokeman key={index}><Link to={`/pokemon/${index+1}`}>{pokeman.name}</Link></Pokeman>
+        
+          <div className={screen}>
+          
+          
+          {(toggle &&
+              
+                <div className="dextext">
+                
+                <img className="preview" src={Pic}/> 
+          { pokemon.length && pokemon.map((pokeman, index) => (
+            <Pokeman key={index}><Link 
+              onMouseOver={() => setPic("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + (index+1) + ".png")}
+              onMouseLeave={() => setPic(logo)} 
+              style={{color:"black", textDecoration:"none"}}to={`/pokemon/${index+1}`}>{pokeman.name}</Link></Pokeman>
           ))}
-  
+          
+          </div>
+          )}
+          </div>
+          
+        
+        <div className="open">
+
      
-      
+     <br/>
+     <label className={light}>
+          <input onClick={showe}  type="checkbox"/>
+          <span className="slider round"></span>
+        </label>
+
+        </div>
       {/* <img src={Pic} />
       <br/>
       {Pokemon.name}
@@ -186,23 +210,31 @@ const Container = styled.div`
 const ListBox = styled.div`
   {
     margin: 35px 0px 35px 450px;
-    border: solid rgb(32, 115, 197) 5px;
-    border-radius: 5px;
-    padding: 3px;
+    border: solid rgb(148, 39, 39) 5px;
+    background-color:rgb(205, 58, 58);
+    text-align:right;
+    font-size:110%;
+    border-radius: 15px;
+    padding: 5px;
     justify-content: center;
     flex-direction: column;
-    width: 468px;
+    width: 400px;
+    height: 590px;
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    
+
   }
 `
 
 const ListHeader = styled.div`
   { text-align:center;
     align-items: center;
-    border-bottom: solid rgb(205, 58, 58) 3px;
-    font-size:110%;
+    border-bottom: double rgb(148, 39, 39) 4px;
+    font-size:120%;
+    color:yellow;
+
     
   }
 `

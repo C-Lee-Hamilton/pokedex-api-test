@@ -3,8 +3,13 @@ import { List } from '../components/List';
 
 export const Home = () => {
   return (
-    <div>
-      <h1>Look at all those Chickéns </h1>
+    <div >
+     
+      
+      
+   
+     <br></br>
+      <h1 >Pokédex</h1>
       <List/>
       
     
