@@ -1,4 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+.scroll{
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding:10px;
+ 
+}
+.scroll2{ background-image:linear-gradient(cyan, black, white);}
+
+.scroll3{
+  height: 325px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding:15px;
+  margin-top:1px;
+ 
+}
+.top{
+  float:left;
+  margin-left:38%;
+  text-align: center;
+}
 
 h1{color:blue;
   margin-top:40px;
@@ -7,7 +29,17 @@ h1{color:blue;
   
 }
 
-
+.shine{float:left;
+      margin-top:-200px;
+      margin-left:45px;        
+      color:white;
+      background-color:rgb(105, 104, 104);
+      border-radius: 11%;
+}
+.shine:hover{
+  background-color:rgb(83, 82, 82);
+}
+.shine:active{transform:translateY(1px);}
 
 
 img{float:left;
@@ -25,9 +57,10 @@ img{float:left;
 .attempter{display:flex;
  }
 
- dextext{
-  padding: 100px;
- }
+.home{
+  float:left;
+  margin-left:42px;
+}
 
  .screen{
   background-color: rgb(117, 113, 113);
@@ -198,3 +231,134 @@ body{
    
     border-radius: 50%;
   }
+
+
+/* pokemon page slider */
+.slider2 {
+    
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+ 
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider2:before {
+  position: absolute;
+  content: "";
+  border-style:solid;
+  border-color: rgb(125, 20, 20);
+  height: 26px;
+  width: 26px;
+  left: 30px;
+  bottom: 4px;
+  margin-bottom:-3px;
+  background-color:rgb(255, 15, 15);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider2 {
+  background-color: black;
+ 
+}
+
+input:focus + .slider2 {
+  box-shadow: 0 0 1px #68bbff;
+ 
+}
+
+input:checked + .slider2:before {
+  content: "";
+  background-color: rgb(184,49,49);
+  text-align: center;
+  font-size:small;
+-webkit-transform: translateX(-26px);
+  -ms-transform: translateX(-26px);
+  transform: translateX(-26px);
+}
+
+/* Rounded sliders */
+.slider2.round {
+  
+  border-radius: 34px;
+}
+
+.slider2.round:before {
+ 
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* scrollbar */
+.scroll::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(179, 176, 176);
+}
+
+
+
+.scroll::-webkit-scrollbar-thumb {
+  background-image:linear-gradient(red, black, white);
+
+  outline: 3px solid rgb(0, 0, 0);
+  
+}
+.scroll:active::-webkit-scrollbar-thumb{
+  
+  background-image:linear-gradient(cyan, black, white);
+}
+
+
+
+/* scrollbar2 */
+.scroll3::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(179, 176, 176);
+  
+}
+
+
+
+.scroll3::-webkit-scrollbar-thumb {
+background-image:linear-gradient(red, black, white);
+
+outline: 3px solid rgb(0, 0, 0);
+
+}
+.scroll3:active::-webkit-scrollbar-thumb{
+
+background-image:linear-gradient(cyan, black, white);
+}
