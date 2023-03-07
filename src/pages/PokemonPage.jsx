@@ -12,7 +12,6 @@ export const PokemonPage = () => {
   const [dex,setDex]=useState("");
   const [pokewe,setPokewe]=useState(" ");
   const [height,setHeight]=useState();
-  const [baby,setBaby]=useState();
   const [name,setName]=useState();
   const[poketype1,setPoketype1]=useState();
   const[poketype2,setPoketype2]=useState();
@@ -22,25 +21,12 @@ export const PokemonPage = () => {
   const[toggle2,setToggle2]=useState(false);
   const[number,setNumber]=useState();
   const[weak,setWeak]=useState();
-  const [power,setPower]=useState("camera3");
-  const [power2,setPower2]=useState("camera4");
+  const[next,setNext]=useState();
   const { pokemonId } = useParams();
-  const [light,setLight]=useState("switch2");
-  const [toggle,setToggle]=useState(true);
-  const [screen,setScreen]=useState("screen");
-
-
+ 
   const pokepic=()=>{
     toggle1 === true ? setToggle1(false):setToggle1(true);
     toggle2 === true ? setToggle2(false):setToggle2(true);
-  }
-
-  const showe=()=>{
-    power==="camera2" ? setPower("camera3"):setPower("camera2");
-    power2==="camera2" ? setPower2("camera4"):setPower2("camera2");
-    light==="switch" ? setLight("switch2"):setLight("switch");
-    toggle===true ? setToggle(false):setToggle(true);
-    screen==="screen" ? setScreen("screenon"):setScreen("screen");
   }
 
   useEffect(() => {
@@ -58,6 +44,8 @@ export const PokemonPage = () => {
             setHeight(data.height/10);
             setPoketype1(data.types[0].type.name);
             setPoketype2("/" + data.types[1].type.name);
+            setNext(data.id+1)
+            console.log(data.id)
          })
       };
       fetchPoke();
@@ -72,7 +60,7 @@ export const PokemonPage = () => {
            .then( data => {  
             setPokeinfo(data);
             setDex(data.flavor_text_entries[1].flavor_text);
-            setBaby("Evolves from: " + data.evolves_from_species.name);
+           
            })
         };
         catchPoke();
@@ -104,24 +92,10 @@ export const PokemonPage = () => {
 
 
   return(
-    
-<Container>
-  <br></br>
-<h1>Pokedex Page</h1>
-<ListBox>
-      <div className="attempter">
-      <img className="camera" src={circle}/>
-      <img className={power} src={circle}/>
-      <img className={power2} src={circle}/>
-      <img className="camera2" src={circle}/>
-      </div>
+    <div>
+      
+      <div className="top">{name} #{number}</div>
        
-      <div className={screen}>
-      {(toggle &&
-      <>
-
-        <div className="top">{name} #{number}</div>
-        <br></br>
 
         { toggle1 && (
             <div>
@@ -132,36 +106,34 @@ export const PokemonPage = () => {
             <div>
          <img className="preview" src={shiny} />
             </div>
-         )}
+        )}
 
 <div className="scroll3">
-     
+    
       <p>Type: {poketype1}{poketype2} </p>
-      <p>{dex}</p>
-      Weaknesses: {weak?.damage_relations?.double_damage_from?.map((double_damage_from,index)=>(<div key={index}>{double_damage_from.name}</div>))}
-      Strengths: {weak?.damage_relations?.double_damage_to?.map((double_damage_to,index)=>(<div key={index}>{double_damage_to.name}</div>))}
-      <p>Weight:{pokewe} kgs</p>
+      <p>Weight:{pokewe}  kgs   </p>
       <p>Height: {height} meters</p>
-      <p>{baby}</p>
+      <p>Weaknesses: {weak?.damage_relations?.double_damage_from?.map((double_damage_from,index)=>(<div key={index}>{double_damage_from.name}</div>))}</p>
+      <p>Strengths: {weak?.damage_relations?.double_damage_to?.map((double_damage_to,index)=>(<div key={index}>{double_damage_to.name}</div>))}</p>
+    
+     
     
 </div>
-      
-<button className="shine" onClick={pokepic}>Shiny</button>
-        <Link className="home" to={`..`}>Home</Link>   
-      </>)}
-</div>
-  
-<div className="open">
-    <br/>
-    <label className={light}>
-      <input onClick={showe}  type="checkbox"/>
-      <span  className="slider2 round"></span>
-    </label>
 
+      
+
+
+<button className="shine" onClick={pokepic}>Shiny</button>
+<p className="info">{dex}</p>
+        <Link className="home" to={`..`}>Home</Link>  
+        {/* <Link className="home" to={`${next}`}>Next</Link>   */}
+        
+         
+   
+      
 </div>
-    
-  </ListBox>
-  </Container>
+
+
 
   )
 }
@@ -177,37 +149,7 @@ export const PokemonPage = () => {
 
 
 
-const Container = styled.div`
- {
-   width: 100%;
-  
-}
-`
-const ListBox = styled.div`
- {
-   margin: 35px 0px 35px 450px;
-   border: solid rgb(148, 39, 39) 5px;
-   background-color:rgb(205, 58, 58);
-   text-align:right;
-   font-size:110%;
-   border-radius: 15px;
-   padding: 5px;
-   justify-content: center;
-   flex-direction: column;
-   width: 400px;
-   height: 590px;
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-   
-
- }
-`
 
 
-const Pokeman = styled.div`
-{
- align-items: center;
- justify-content: center;
-}
-`
+
+

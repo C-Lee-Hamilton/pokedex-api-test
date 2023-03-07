@@ -4,29 +4,20 @@ import './App.css';
 
 import { ErrorPage } from './pages/ErrorPage';
 import { PokemonPage } from './pages/PokemonPage';
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App/>,
-//     errorElement: <ErrorPage/>,
-//   },
-//   {
-//     path: "pokemon/:pokemonId",
-//     element: <PokemonPage/>,
-//   }
-// ]);
+import { PokeDex } from './components/Dex';
 
 function App() {
   return (
   
     <div className="App">
+      <PokeDex>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>} errorElement={<ErrorPage/>} />
           <Route path="pokemon/:pokemonId" element={<PokemonPage />} />
         </Routes>
       </BrowserRouter>
+      </PokeDex>
     </div>
    
   );

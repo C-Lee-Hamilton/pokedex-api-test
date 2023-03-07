@@ -1,25 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 .scroll{
-  height: 400px;
+  height: 380px;
   overflow-x: hidden;
   overflow-y: auto;
   padding:10px;
- 
+  margin-right:10px;
+ margin-top:10px;
 }
 .scroll2{ background-image:linear-gradient(cyan, black, white);}
 
 .scroll3{
-  height: 325px;
+  height: 225px;
   overflow-x: hidden;
   overflow-y: auto;
-  padding:15px;
-  margin-top:1px;
- 
+  width:150px;
+  padding-right:10px;
+  margin-left:52%;
+  margin-top:15px;
+  font-size: 15px;
+  }
+
+.info{
+  border-style: double;
+  border-radius:5%;
+  border-color:black;
+  margin-right:50%;
+  margin-top:5%;
+  color:rgb(0, 0, 0);
+  margin-left:10px;
+  width:320px;
+  padding:3px;
+  margin-bottom:2px;
+  background-color: rgba(245, 245, 245, 0.54);
+  font-size:18px;
 }
+
 .top{
-  float:left;
-  margin-left:38%;
+  /* float:left;
+  margin-left:38%; */
+  margin-bottom:15px;
   text-align: center;
+  font-size: 23px;
+  text-shadow: 1px 1px 1px cyan, -1px -1px 1px white;
+
+ 
 }
 
 h1{color:blue;
@@ -30,8 +54,8 @@ h1{color:blue;
 }
 
 .shine{float:left;
-      margin-top:-200px;
-      margin-left:45px;        
+      margin-top:-20%;
+      margin-left:55px;        
       color:white;
       background-color:rgb(105, 104, 104);
       border-radius: 11%;
@@ -45,21 +69,37 @@ h1{color:blue;
 img{float:left;
     height:30%;
     width:30%;
+   
+ 
     }
 .preview{
   float:left;
-    height:40%;
-    width:40%;
-   background-image:  url(../public/pokeball.ico);
+    height:39%;
+    width:39%;
+    margin-left:10px;
+   background-image:  url(../src/components/thelogo.png);
     background-size:contain;
+    background-color:rgb(5, 167, 255);
+    border-style:ridge;
+    border-radius:10%;
+    border-color:grey;
+    
+
 
 }
 .attempter{display:flex;
- }
+          margin-left:10px;
+          margin-top:5px;
+}
 
 .home{
-  float:left;
-  margin-left:42px;
+margin-right:42%;
+padding-top:10px;
+font-weight: 1000;
+color:black;
+
+
+
 }
 
  .screen{
@@ -67,56 +107,85 @@ img{float:left;
   margin:22px;
   
   margin-bottom:5px;
-  padding-top:10px;
+  margin-top:10px;
+  padding-top:5px;
   padding-bottom:15px;
   border-radius:5%;
   border-style:double;
   border-color:black;
   width:350px;
   height:410px;
+  box-shadow: inset 1px 1px 1px rgb(60, 61, 61), inset -1px -1px 1px rgb(60,61,61),  3px 3px 3px rgb(132,31,31),-3px -3px 3px rgb(132,31,31);
 
  }
  .screenon{
   background-color: grey;
   margin:22px;
+  
   margin-bottom:5px;
-  padding-top:10px;
+  margin-top:10px;
+  padding-top:5px;
   padding-bottom:15px;
-  text-transform: 10px;
-  padding-right:10px;
-  margin-right:10px;
   border-radius:5%;
-  border-style: double;
+  border-style:double;
   border-color:black;
-  width:340px;
+  width:350px;
   height:410px;
+  /* box-shadow: */
+  /* inset 60px 0 120px #f0f,  /* left magenta */
+  /* inset -60px 0 120px #0ff */ 
+  box-shadow: inset 1px 1px 1px cyan, inset -1px -1px 1px cyan,  3px 3px 3px rgb(132,31,31),-3px -3px 3px rgb(132,31,31);
 
  }
 .camera{
   height:12%;
   width:12%;
   margin-bottom:5px;
-
+  margin-top:2px;
+  border:rgb(110, 25, 25) solid 3px ;
+  border-radius:100%;
+  box-shadow:2px 2px 2px rgb(161, 37, 37),-2px -2px 2px rgb(161, 37, 37);
+  
 }
 .camera2{
   height:6%;
   width:6%;
-  filter: hue-rotate( 270deg);
-
+  filter: hue-rotate( 320deg);
+  border:rgb(39, 110, 25) solid 3px ;
+  border-radius:100%;
+  box-shadow:1px 1px 1px rgb(149, 161, 37),-1px -1px 1px rgb(111, 161, 37);
+  margin-top:2px;
 }
 .camera3{
   height:6%;
   width:6%;
   filter: hue-rotate( 180deg);
+  border:rgb(39, 110, 25) solid 3px ;
+  border-radius:100%;
+  box-shadow:1px 1px 1px rgb(149, 161, 37),-1px -1px 1px rgb(111, 161, 37);
+  margin-top:2px;
 
 }
 .camera4{
   height:6%;
   width:6%;
   filter: hue-rotate( 220deg);
+  border:rgb(39, 110, 25) solid 3px ;
+  border-radius:100%;
+  box-shadow:1px 1px 1px rgb(149, 161, 37),-1px -1px 1px rgb(111, 161, 37);
+  margin-top:2px;
 
 }
+.camera5{
+  height:6%;
+  width:6%;
+  filter: hue-rotate( 300deg);
+  border:rgba(45, 184, 17, 0.83) solid 3px ;
+  border-radius:100%;
+  box-shadow:1px 1px 1px rgba(105, 114, 26, 0.504),-1px -1px 1px rgba(111, 161, 37, 0.296);
+  margin-top:2px;
 
+}
 .photo{
   text-align:center;
   margin-bottom:-20%;
@@ -124,6 +193,7 @@ img{float:left;
 }
 .open{
   text-align: center;
+ 
 }
 
     
@@ -150,8 +220,11 @@ body{
     border-style: outset ;
     border-radius:34px;
     border-width:2px;
+    margin-top:10px;
+  
     
   }
+  
   .switch2 {
     
     position: relative;
@@ -161,7 +234,8 @@ body{
     border-style: outset ;
     border-radius:34px;
     border-width:2px;
-    border-color:rgb(49, 154, 224);
+    border-color:cyan;
+    margin-top:10px;
 }
   /* Hide default HTML checkbox */
   .switch input {
@@ -181,7 +255,7 @@ body{
     right: 0;
     bottom: 0;
     background-color: #000000;
-   
+
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -203,17 +277,19 @@ body{
   
   input:checked + .slider {
     background-color: black;
+    
    
   }
   
   input:focus + .slider {
     box-shadow: 0 0 1px #68bbff;
+    
    
   }
   
   input:checked + .slider:before {
     content: "";
-    background-color: rgb(255, 15, 15);
+    background-color: rgb(222, 14, 14);
     text-align: center;
     font-size:small;
  -webkit-transform: translateX(26px);
@@ -231,72 +307,6 @@ body{
    
     border-radius: 50%;
   }
-
-
-/* pokemon page slider */
-.slider2 {
-    
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #000000;
- 
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider2:before {
-  position: absolute;
-  content: "";
-  border-style:solid;
-  border-color: rgb(125, 20, 20);
-  height: 26px;
-  width: 26px;
-  left: 30px;
-  bottom: 4px;
-  margin-bottom:-3px;
-  background-color:rgb(255, 15, 15);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider2 {
-  background-color: black;
- 
-}
-
-input:focus + .slider2 {
-  box-shadow: 0 0 1px #68bbff;
- 
-}
-
-input:checked + .slider2:before {
-  content: "";
-  background-color: rgb(184,49,49);
-  text-align: center;
-  font-size:small;
--webkit-transform: translateX(-26px);
-  -ms-transform: translateX(-26px);
-  transform: translateX(-26px);
-}
-
-/* Rounded sliders */
-.slider2.round {
-  
-  border-radius: 34px;
-}
-
-.slider2.round:before {
- 
-  border-radius: 50%;
-}
-
-
-
-
 
 
 
@@ -347,6 +357,7 @@ input:checked + .slider2:before {
 .scroll3::-webkit-scrollbar {
   width: 10px;
   background-color: rgb(179, 176, 176);
+
   
 }
 
